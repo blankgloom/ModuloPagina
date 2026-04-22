@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Escritorio del Coleccionista</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- INTRO -->
+    <div id="introScreen" class="screen active">
+        <div class="intro-content">
+            <h1 class="intro-title">El Escritorio del<br>Coleccionista</h1>
+            <p class="intro-subtitle">¡Aventura Educativa!</p>
+            <button id="btnIntro" class="btn-intro">¡Comenzar Aventura! 🎮</button>
+        </div>
+    </div>
+
+    <!-- MENÚ -->
+    <div id="menuScreen" class="screen">
+        <div class="menu-content">
+            <h2 class="menu-title">¡Elige tu Aventura!</h2>
+            <div class="menu-options">
+                <button id="btnModeGame" class="menu-btn mode-game">
+                    <span class="menu-icon">🔍</span>
+                    <span class="menu-text"><strong>Juego del Coleccionista</strong><small>¡Encuentra los objetos!</small></span>
+                </button>
+                <button id="btnModeSyllables" class="menu-btn mode-syllables">
+                    <span class="menu-icon">🔤</span>
+                    <span class="menu-text"><strong>Aprende las Sílabas</strong><small>Practica formando sílabas</small></span>
+                </button>
+                <button id="btnModeVowels" class="menu-btn mode-vowels">
+                    <span class="menu-icon">🅰️</span>
+                    <span class="menu-text"><strong>Vocales y Sílabas</strong><small>Aprende las vocales y más</small></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- INICIO JUEGO -->
+    <div id="startScreen" class="screen">
+        <div class="start-content">
+            <h1 class="game-title">El Escritorio del<br>Coleccionista</h1>
+            <p class="subtitle">¡Usa tu lupa para encontrar los objetos!</p>
+            <div id="previewItems" class="preview-items"></div>
+            <button id="btnStart" class="btn-start">🔍 ¡Empezar a Buscar!</button>
+            <button id="btnBackToMenu" class="btn-back">⬅️ Volver al Menú</button>
+        </div>
+    </div>
+
+    <!-- PANTALLA DE JUEGO -->
+    <div id="gameScreen" class="screen">
+        <div class="top-bar">
+            <div class="score-display" id="stars">
+                <span class="star" id="star1">☆</span><span class="star" id="star2">☆</span><span class="star" id="star3">☆</span><span class="star" id="star4">☆</span><span class="star" id="star5">☆</span>
+            </div>
+            <div class="round-info" id="roundInfo">Ronda 1 de 5</div>
+            <button id="btnSound" class="btn-sound">🔊</button>
+        </div>
+        <div class="desk-area">
+            <div id="deskSurface" class="desk-surface desk-grain"></div>
+            <div id="stickyNoteContainer" class="sticky-note-container">
+                <div class="sticky-note">
+                    <div class="tape"></div>
+                    <div class="note-label">Busca:</div>
+                    <div id="noteWord" class="note-word">—</div>
+                    <button id="btnListen" class="btn-listen">🔊 Escuchar</button>
+                </div>
+            </div>
+        </div>
+        <div id="magnifier" class="magnifier"><div class="magnifier-lens"></div><div class="magnifier-handle"></div></div>
+        <div id="cameraFlash" class="camera-flash"></div>
+        <div id="polaroidPopup" class="polaroid-popup">
+            <div class="polaroid-frame">
+                <div id="polaroidImg" class="polaroid-img"></div>
+                <div id="polaroidCaption" class="polaroid-caption"></div>
+                <div id="polaroidCheck" class="polaroid-check">✓</div>
+            </div>
+            <button id="btnNext" class="btn-next">✓ Siguiente ➜</button>
+        </div>
+        <div id="feedbackBubble" class="feedback-bubble"><p>🤔 ¡Ese no es! Sigue buscando...</p></div>
+    </div>
+
+    <!-- APRENDER SÍLABAS -->
+    <div id="syllablesScreen" class="screen">
+        <div class="top-bar">
+            <button id="btnBackSyllables" class="btn-back-menu">⬅️ Volver</button>
+            <h2 class="screen-title">🔤 Aprende las Sílabas</h2>
+            <div style="width:80px;"></div>
+        </div>
+        <div class="learning-content">
+            <div class="syllables-container">
+                <div class="syllable-card" data-syllable="ma"><div class="syllable-main">MA</div><div class="syllable-examples"><span>🍎 manzana</span><span>👋 mano</span></div></div>
+                <div class="syllable-card" data-syllable="pa"><div class="syllable-main">PA</div><div class="syllable-examples"><span>😊 Papá</span><span>🥖 pan</span></div></div>
+                <div class="syllable-card" data-syllable="la"><div class="syllable-main">LA</div><div class="syllable-examples"><span>🐑 lana</span><span>✏️ lápiz</span></div></div>
+                <div class="syllable-card" data-syllable="sa"><div class="syllable-main">SA</div><div class="syllable-examples"><span>🍯 salsa</span><span>🐸 sapo</span></div></div>
+                <div class="syllable-card" data-syllable="ta"><div class="syllable-main">TA</div><div class="syllable-examples"><span>☕ taza</span><span>🐐 Tapir</span></div></div>
+                <div class="syllable-card" data-syllable="ca"><div class="syllable-main">CA</div><div class="syllable-examples"><span>🏠 casa</span><span>🛏️ cama</span></div></div>
+            </div>
+            <p class="hint-text">Presiona las tarjetas para escuchar la sílaba</p>
+        </div>
+    </div>
+
+    <!-- VOCALES Y SÍLABAS -->
+    <div id="vowelsScreen" class="screen">
+        <div class="top-bar">
+            <button id="btnBackVowels" class="btn-back-menu">⬅️ Volver</button>
+            <h2 class="screen-title">🅰️ Vocales y Sílabas</h2>
+            <div style="width:80px;"></div>
+        </div>
+        <div class="learning-content">
+            <div class="vowels-section">
+                <h3>Las Vocales</h3>
+                <div class="vowels-container">
+                    <div class="vowel-card" data-vowel="a"><div class="vowel-letter">A</div><div class="vowel-emoji">🍎</div><button class="btn-play-vowel">🔊</button></div>
+                    <div class="vowel-card" data-vowel="e"><div class="vowel-letter">E</div><div class="vowel-emoji">🐘</div><button class="btn-play-vowel">🔊</button></div>
+                    <div class="vowel-card" data-vowel="i"><div class="vowel-letter">I</div><div class="vowel-emoji">🦎</div><button class="btn-play-vowel">🔊</button></div>
+                    <div class="vowel-card" data-vowel="o"><div class="vowel-letter">O</div><div class="vowel-emoji">👁️</div><button class="btn-play-vowel">🔊</button></div>
+                    <div class="vowel-card" data-vowel="u"><div class="vowel-letter">U</div><div class="vowel-emoji">🍇</div><button class="btn-play-vowel">🔊</button></div>
+                </div>
+            </div>
+            <div class="syllables-combine">
+                <h3>Forma Sílabas</h3>
+                <div class="combine-container">
+                    <div class="consonant-selector">
+                        <button class="consonant-btn" data-consonant="m">M</button>
+                        <button class="consonant-btn" data-consonant="p">P</button>
+                        <button class="consonant-btn" data-consonant="l">L</button>
+                        <button class="consonant-btn" data-consonant="s">S</button>
+                        <button class="consonant-btn" data-consonant="t">T</button>
+                    </div>
+                    <div class="combine-display">
+                        <div id="combineResult" class="combine-result">?</div>
+                        <button id="btnPlayCombine" class="btn-play-combine">🔊 Escuchar</button>
+                    </div>
+                    <div class="vowel-selector">
+                        <button class="vowel-btn" data-vowel="a">a</button>
+                        <button class="vowel-btn" data-vowel="e">e</button>
+                        <button class="vowel-btn" data-vowel="i">i</button>
+                        <button class="vowel-btn" data-vowel="o">o</button>
+                        <button class="vowel-btn" data-vowel="u">u</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CELEBRACIÓN -->
+    <div id="celebrationScreen" class="screen">
+        <div class="celebration-content">
+            <h1>🎉 ¡Increíble! 🎉</h1>
+            <p class="celeb-text">¡Encontraste todos los objetos!</p>
+            <div id="albumGrid" class="album-grid"></div>
+            <button id="btnRestart" class="btn-restart">🔄 ¡Jugar Otra Vez!</button>
+            <button id="btnMenuFromCeleb" class="btn-back">📋 Volver al Menú</button>
+        </div>
+        <div id="confettiContainer" class="confetti-container"></div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
